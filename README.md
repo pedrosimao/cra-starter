@@ -1,8 +1,9 @@
-# ReactTS 17 Start-up Starter
+# ReactTS 17 Start-up Starter (SPA)
 
-Personal starter project forked from [vite-reactts17-chakra-jest-husky](https://github.com/The24thDS/vite-reactts17-chakra-jest-husky). It is intended to quickly bootstrap React SPA apps for any start-up project starting from scratch.
+My personal starter project! It was forked from [vite-reactts17-chakra-jest-husky](https://github.com/The24thDS/vite-reactts17-chakra-jest-husky).
+It is intended to quickly bootstrap React SPA apps for any React project.
 
-This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) + [Chakra UI](https://chakra-ui.com) boilerplate to be built with [Vite](https://vitejs.dev). It also includes [Husky](https://typicode.github.io/husk) and a pre-commit hook that runs `yarn format`.
+This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) + [Chakra UI](https://chakra-ui.com) boilerplate to be built with [Vite](https://vitejs.dev).
 
 ## What's inside?
 
@@ -11,7 +12,7 @@ This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang
 - [TypeScript](https://www.typescriptlang.org)
 - [Chakra UI](https://chakra-ui.com)
 - [Framer Motion](https://www.framer.com/motion/)
-- [Jest](https://jestjs.io)
+- [Vitest](https://vitest.dev)
 - [Testing Library](https://testing-library.com)
 - [Eslint](https://eslint.org)
 - [Prettier](https://prettier.io)
@@ -22,7 +23,7 @@ This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang
 ## Todo
 
 - Add a full Chakra UI Theme Example
-- Add Cypress with examples
+- Add `Cypress` with examples
 - Add `typesafe-i18n` as translation Library
 - Add `inlang` as translation host
 - Add `axios` with examples
