@@ -1,8 +1,6 @@
 import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
-import macrosPlugin from "vite-plugin-babel-macros"
-import reactJsx from 'vite-react-jsx'
-import svgrPlugin from 'vite-plugin-svgr'
+import react from '@vitejs/plugin-react'
+const svgrPlugin = require('vite-plugin-svgr')
 const path = require('path')
 
 // https://vitejs.dev/config/
@@ -17,10 +15,31 @@ export default defineConfig({
       'src' : path.resolve(__dirname, './src')
     },
   },
+  // @ts-ignore
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+  },
   plugins: [
-    reactRefresh(),
-    reactJsx(),
-    macrosPlugin(),
+    react(
+      {
+        babel: {
+          plugins: [
+            'babel-plugin-macros',
+            [
+              "@emotion",
+              {
+                "sourceMap": true,
+                "autoLabel": "dev-only",
+                "labelFormat": "[local]",
+                "cssPropOptimization": true
+              }
+            ]
+          ]
+        },
+        // Exclude storybook stories
+        exclude: /\.stories\.(t|j)sx?$/,
+      }),
     svgrPlugin({
       svgrOptions: {
         icon: true,

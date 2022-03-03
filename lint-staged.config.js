@@ -7,6 +7,8 @@ module.exports = {
     `yarn eslint --fix ${filenames.join(' ')}`,
     `yarn prettier --config ./.prettierrc -w ${filenames.join(' ')}`,
     'git update-index --again',
+    // Run unit tests
+    `vitest --run related ${filenames.join(' ')}`,
   ],
 
   // Format MarkDown and JSON

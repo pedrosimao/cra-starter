@@ -31,16 +31,14 @@ function App(): JSX.Element {
         >
           <Image src={logo} alt="" h="40vmin" />
         </motion.div>
-        <Text fontSize={textFontSizes}>
-          <p>Hello Vite + React + Typescript + Chakra UI!</p>
-        </Text>
+        <Text fontSize={textFontSizes}>Hello Vite + React + Typescript + Chakra UI!</Text>
         <Button
           colorScheme="blue"
           fontSize={textFontSizes}
           onClick={() => setCount((c) => c + 1)}
           marginTop="2"
         >
-          count is: {count}
+          count: {count}
         </Button>
         <Text fontSize={textFontSizes}>
           Edit <code>App.tsx</code> and save to test HMR updates.
