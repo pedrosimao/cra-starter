@@ -1,6 +1,6 @@
+import styled from '@emotion/styled/macro'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { IconButton, IconButtonProps, useColorMode } from '@chakra-ui/react'
-import styled from '@emotion/styled'
 
 import transientOptions from '../utils/general'
 

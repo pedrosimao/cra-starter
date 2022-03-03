@@ -9,7 +9,6 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'prettier',
-    'plugin:prettier/recommended',
   ],
   env: {
     browser: true,
@@ -17,10 +16,10 @@ module.exports = {
   },
   plugins: [
     'react',
-    'prettier',
     'jsx-a11y',
-    '@typescript-eslint',
     'react-hooks',
+    // 'prettier',
+    // '@typescript-eslint',
     // 'simple-import-sort',
     // '@emotion',
   ],
@@ -33,8 +32,11 @@ module.exports = {
     },
   },
   overrides: [{ files: ['*.ts', '*.tsx', '*.js', '*.jsx'] }],
-  // ignorePatterns: ["src/zeus/*"],
+  // We don't want to lint generated files nor node_modules,
+  // but we want to lint .prettierrc.js (ignored by default by eslint)
+  ignorePatterns: ['node_modules/*', '.build/*', '!.prettierrc.js'],
   rules: {
+    '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
@@ -66,20 +68,21 @@ module.exports = {
     'import/prefer-default-export': 0,
     'no-restricted-imports': [
       'warn',
-      // {
-      //   name: '@emotion/styled',
-      //   message:
-      //     'Please use @emotion/styled/macro instead. See https://emotion.sh/docs/babel-macros',
-      // },
-      // {
-      //   name: '@emotion/react',
-      //   message:
-      //     'Please use @emotion/react/macro instead. See https://emotion.sh/docs/babel-macros',
-      // },
+      {
+        name: '@emotion/styled',
+        message:
+          'Please use @emotion/styled/macro instead. See https://emotion.sh/docs/babel-macros',
+      },
+      {
+        name: '@emotion/react',
+        message:
+          'Please use @emotion/react/macro instead. See https://emotion.sh/docs/babel-macros',
+      },
       {
         name: 'typed-redux-saga',
         message:
-          'Please use @typed-redux-saga/macro instead. See https://github.com/agiledigital/typed-redux-saga#babel-macro',
+          'Please use @typed-redux-saga/macro instead. ' +
+          'See https://github.com/agiledigital/typed-redux-saga#babel-macro',
       },
     ],
     'jsx-a11y/aria-props': 2,

@@ -19,6 +19,39 @@ This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang
 
 \+ other smaller dependencies
 
+## Todo
+
+- Add a full Chakra UI Theme Example
+- Add Cypress with examples
+- Add `typesafe-i18n` as translation Library
+- Add `inlang` as translation host
+- Add `axios` with examples
+- Add `react-query` with examples
+- Add a branch with authenticated / unauthenticated routes examples
+- Revise all linting rules
+
+# Technical choices
+
+- ESLint and Prettier are integrated with VSCode out of the box (you just need VSCode's ESLint plugin).
+- Prettier is integrated with ESLint, so you do not need the Prettier plugin. [More information here](https://prettier.io/docs/en/integrating-with-linters.html#notes)
+- Improved lint-staged configuration: linting will only happen on staged files, not all files.
+- Because of Husky settings, Typescript types and linting are checked before each commit. If for some reason you want to ignore and commit anyway you can use the `--no-verify` flag. (ex.: `git commit --no-verify -m "Updated README.md"`)
+
+For automatic ES-Lint corrections on VSCode, this setting was added to this project:
+
+```
+// .vscode/settings.json
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+For the same in Webstorm follow these instructions:
+`https://www.jetbrains.com/help/webstorm/eslint.html#ws_eslint_configure_run_eslint_on_save`
+
 ## Getting started
 
 1. Create the project.

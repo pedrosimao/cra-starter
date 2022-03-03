@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
+import macrosPlugin from "vite-plugin-babel-macros"
 import reactJsx from 'vite-react-jsx'
 import svgrPlugin from 'vite-plugin-svgr'
 const path = require('path')
@@ -19,6 +20,7 @@ export default defineConfig({
   plugins: [
     reactRefresh(),
     reactJsx(),
+    macrosPlugin(),
     svgrPlugin({
       svgrOptions: {
         icon: true,
