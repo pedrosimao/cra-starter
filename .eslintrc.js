@@ -34,7 +34,7 @@ module.exports = {
   overrides: [{ files: ['*.ts', '*.tsx', '*.js', '*.jsx'] }],
   // We don't want to lint generated files nor node_modules,
   // but we want to lint .prettierrc.js (ignored by default by eslint)
-  ignorePatterns: ['node_modules/*', '.build/*', '!.prettierrc.js'],
+  ignorePatterns: ['node_modules/*', '.build/*', '.dist/*', '!.prettierrc.js'],
   rules: {
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': [
