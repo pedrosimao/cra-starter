@@ -33,7 +33,7 @@ function App(): JSX.Element {
         </motion.div>
         <Text fontSize={textFontSizes}>Hello Vite + React + Typescript + Chakra UI!</Text>
         <Button
-          colorScheme="blue"
+          variant="primaryOutline"
           fontSize={textFontSizes}
           onClick={() => setCount((c) => c + 1)}
           marginTop="2"
@@ -44,11 +44,11 @@ function App(): JSX.Element {
           Edit <code>App.tsx</code> and save to test HMR updates.
         </Text>
         <Text fontSize={textFontSizes}>
-          <Link href="https://reactjs.org" isExternal color="#61dafb">
+          <Link href="https://reactjs.org" isExternal>
             Learn React
           </Link>
           {' | '}
-          <Link href="https://vitejs.dev/guide/features.html" isExternal color="#61dafb">
+          <Link href="https://vitejs.dev/guide/features.html" isExternal>
             Vite Docs
           </Link>
           {' | '}

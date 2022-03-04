@@ -26,9 +26,9 @@ module.exports = {
     'cypress',
     'chai-friendly',
     // 'prettier',
-    // '@typescript-eslint',
+    '@typescript-eslint',
     // 'simple-import-sort',
-    // '@emotion',
+    '@emotion',
   ],
   parserOptions: {
     typescript: true,
