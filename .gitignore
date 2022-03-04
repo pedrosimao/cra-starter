@@ -99,6 +99,9 @@ dist
 # TernJS port file
 .tern-port
 
+# Mac OS related
+.DS_Store
+
 # Environment variables files
 .env.local
 .env.staging.local

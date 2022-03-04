@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-const svgrPlugin = require('vite-plugin-svgr')
+// @ts-ignore
+import svgrPlugin from 'vite-plugin-svgr'
 const path = require('path')
 
 // https://vitejs.dev/config/
@@ -26,6 +27,7 @@ export default defineConfig({
         babel: {
           plugins: [
             'babel-plugin-macros',
+            // 'macros',
             [
               "@emotion",
               {

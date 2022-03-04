@@ -9,15 +9,22 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'prettier',
+    'plugin:cypress/recommended',
+    // Allow Cypress using an assertion such as expect(value).to.be.true
+    'plugin:chai-friendly/recommended',
   ],
   env: {
     browser: true,
     es2021: true,
+    jest: true,
+    'cypress/globals': true,
   },
   plugins: [
     'react',
     'jsx-a11y',
     'react-hooks',
+    'cypress',
+    'chai-friendly',
     // 'prettier',
     // '@typescript-eslint',
     // 'simple-import-sort',
@@ -134,6 +141,7 @@ module.exports = {
     //       // Node.js builtins. You could also generate this regex if you use a `.js` config.
     //       // For example: `^(${require("module").builtinModules.join("|")})(/|$)`
     //       [
+    // eslint-disable-next-line max-len
     //         '^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)',
     //       ],
     //       // Packages
@@ -236,6 +244,7 @@ module.exports = {
 //          // Node.js builtins. You could also generate this regex if you use a `.js` config.
 //          // For example: `^(${require("module").builtinModules.join("|")})(/|$)`
 //          [
+// eslint-disable-next-line max-len
 //            "^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)"
 //          ],
 //          // Packages

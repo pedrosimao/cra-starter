@@ -20,6 +20,8 @@
     "coverage": "vitest run --coverage",
     "test:typescript": "tsc",
     "test:watch": "yarn test --collectCoverage=false --watch",
+    "cypress:open": "cypress open --browser chrome",
+    "cypress:run": "cypress run --browser chrome",
     "posttest": "npx http-server coverage/lcov-report",
     "prepare": "husky install"
   },
@@ -37,6 +39,8 @@
     "vite-plugin-svgr": "^1.0.1"
   },
   "devDependencies": {
+    "@cypress/react": "^5.12.4",
+    "@cypress/vite-dev-server": "^2.2.2",
     "@emotion/babel-plugin": "^11.7.2",
     "@emotion/eslint-plugin": "^11.7.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -46,10 +50,13 @@
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "c8": "^7.11.0",
+    "cypress": "^9.5.1",
     "eslint": "^8.9.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.4.0",
     "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",

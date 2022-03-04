@@ -23,7 +23,7 @@ This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang
 ## Todo
 
 - Add a full Chakra UI Theme Example
-- Add `Cypress` with examples
+- Configure `Cypress` to mount React components (SVG and Macros issues)
 - Add `typesafe-i18n` as translation Library
 - Add `inlang` as translation host
 - Add `axios` with examples
