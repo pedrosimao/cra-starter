@@ -44,7 +44,7 @@ function App(): JSX.Element {
           Edit <code>App.tsx</code> and save to test HMR updates.
         </Text>
         <Text fontSize={textFontSizes}>
-          <Link href="https://reactjs.org" isExternal>
+          <Link href="https://reactjs.org" isExternal color="primary">
             Learn React
           </Link>
           {' | '}

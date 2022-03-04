@@ -22,7 +22,7 @@
     "test:watch": "yarn test --collectCoverage=false --watch",
     "cypress:open": "cypress open --browser chrome",
     "cypress:run": "cypress run --browser chrome",
-    "gen:theme-typings": "chakra-cli tokens ./src/theme/index.ts",
+    "gen:theme-typings": "chakra-cli tokens ./src/theme",
     "posttest": "npx http-server coverage/lcov-report",
     "prepare": "husky install",
     "postinstall": "yarn gen:theme-typings"
