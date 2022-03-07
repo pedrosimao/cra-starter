@@ -29,10 +29,10 @@ This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang
 - Add `axios` with examples
 - Add `react-query` with examples
 - Add a branch with authenticated / unauthenticated routes examples
-- Revise all linting rules
 
 # Technical choices
 
+- Imports are sorted automatically (rules can be changed via .eslintrc.js config file)
 - ESLint and Prettier are integrated with VSCode out of the box (you just need VSCode's ESLint plugin).
 - Prettier is integrated with ESLint, so you do not need the Prettier plugin. [More information here](https://prettier.io/docs/en/integrating-with-linters.html#notes)
 - Improved lint-staged configuration: linting will only happen on staged files, not all files.

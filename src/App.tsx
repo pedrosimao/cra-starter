@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { Box, Button, Flex, Image, Link, Text } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 import ThemeToggleButton from 'src/components/ThemeToggleButton'
 

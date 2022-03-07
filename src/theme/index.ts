@@ -1,14 +1,13 @@
+// Component style overrides
 import { extendTheme, ThemeConfig, withDefaultColorScheme } from '@chakra-ui/react'
 
-// Global style overrides
-import { styles } from './styles'
-
+import { Button } from './components/button'
 // Foundational style overrides
 // import borders from './foundations/borders'
 import { colors } from './foundations/colors'
 
-// Component style overrides
-import { Button } from './components/button'
+// Global style overrides
+import { styles } from './styles'
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',

@@ -4,6 +4,7 @@ module.exports = {
     'airbnb',
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
@@ -21,14 +22,14 @@ module.exports = {
   },
   plugins: [
     'react',
+    // Ensures accessibility is checked
     'jsx-a11y',
     'react-hooks',
     'cypress',
     'chai-friendly',
-    // 'prettier',
     '@typescript-eslint',
-    // 'simple-import-sort',
     '@emotion',
+    'simple-import-sort',
   ],
   parserOptions: {
     typescript: true,
@@ -65,11 +66,7 @@ module.exports = {
       { enforceForRenamedProperties: false },
     ],
     'class-methods-use-this': 0,
-    'import/imports-first': 0,
-    'import/newline-after-import': 0,
-    'import/no-dynamic-require': 0,
-    'import/no-extraneous-dependencies': 0,
-    'import/no-named-as-default': 0,
+    'import/imports-first': 1,
     'import/no-unresolved': 2,
     'import/no-webpack-loader-syntax': 0,
     'import/prefer-default-export': 0,
@@ -105,19 +102,19 @@ module.exports = {
     'prefer-template': 2,
     'react/forbid-prop-types': 0,
     'react/jsx-first-prop-new-line': [2, 'multiline'],
-    'react/display-name': 0,
     'react/jsx-closing-bracket-location': 2,
-    'react/jsx-filename-extension': 0,
     'react/jsx-no-target-blank': 0,
     'react/require-default-props': 0,
     'react/require-extension': 0,
     'react/self-closing-comp': 0,
     'react/jsx-wrap-multilines': 0,
     'react/destructuring-assignment': 0,
+    'react/jsx-filename-extension': 0,
     'require-yield': 0,
     'react/jsx-props-no-spreading': 0,
     'react/state-in-constructor': 0,
     'import/extensions': 0,
+    'import/no-extraneous-dependencies': 0,
     'no-empty': [2, { allowEmptyCatch: true }],
     'react/prop-types': 0,
 
@@ -130,35 +127,32 @@ module.exports = {
 
     // We want to be able to throw error objects
     'no-throw-literal': 0,
-    'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
+
+    // Maximum line length of 100 characters
     'max-len': ['warn', { code: 100 }],
-    // 'simple-import-sort/exports': 'error',
-    // 'simple-import-sort/imports': [
-    //   'warn',
-    //   {
-    //     groups: [
-    //       // Node.js builtins. You could also generate this regex if you use a `.js` config.
-    //       // For example: `^(${require("module").builtinModules.join("|")})(/|$)`
-    //       [
-    // eslint-disable-next-line max-len
-    //         '^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)',
-    //       ],
-    //       // Packages
-    //       ['^\\w'],
-    //       // Internal packages.
-    //       ['^(@|config/)(/*|$)'],
-    //       // Side effect imports.
-    //       ['^\\u0000'],
-    //       // Parent imports. Put `..` last.
-    //       ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-    //       // Other relative imports. Put same-folder imports and `.` last.
-    //       ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-    //       // Style imports.
-    //       ['^.+\\.s?css$'],
-    //     ],
-    //   },
-    // ],
+
+    // Define imports sort and grouping rules
+    'simple-import-sort/exports': 'warn',
+    'simple-import-sort/imports': [
+      'warn',
+      {
+        groups: [
+          // Side effect imports.
+          ['^\\u0000'],
+          // Packages.
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ['^@?\\w'],
+          // Absolute imports and other imports such as Vue-style `@/foo`.
+          // Anything not matched in another group.
+          ['^', '^src'],
+          // Relative imports.
+          // Anything that starts with a dot.
+          ['^\\.'],
+          // Style imports.
+          ['^.+\\.s?css$', 'styles$'],
+        ],
+      },
+    ],
     'import/no-anonymous-default-export': [
       'error',
       {
@@ -182,92 +176,3 @@ module.exports = {
     },
   },
 }
-
-// Keep for reference
-// {
-//  "env": {
-//    "browser": true,
-//    "es2021": true
-//  },
-//  "extends": [
-//    "airbnb",
-//    "plugin:react/recommended",
-//    "plugin:react-hooks/recommended",
-//    "plugin:@typescript-eslint/recommended",
-//    "prettier",
-//    "plugin:import/errors",
-//    "plugin:import/warnings",
-//    "plugin:import/typescript"
-//  ],
-//  "parser": "@typescript-eslint/parser",
-//  "parserOptions": {
-//    "ecmaFeatures": {
-//      "jsx": true
-//    },
-//    "ecmaVersion": 12,
-//    "sourceType": "module"
-//  },
-//  "plugins": [
-//    "react",
-//    "@typescript-eslint",
-//    "react-hooks",
-//    "prettier",
-//    "simple-import-sort"
-//  ],
-//  "settings": {
-//    "import/resolver": {
-//      "node": {
-//        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-//      }
-//    }
-//  },
-//  "rules": {
-//    "no-use-before-define": "off",
-//    "react/react-in-jsx-scope": "off",
-//    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
-//    "react/jsx-props-no-spreading": "off",
-//    "linebreak-style": "off",
-//    "eol-last": "off",
-//    "max-len": ["warn", { "code": 80 }],
-//    "import/extensions": ["error", "never", { "svg": "always" }],
-//    "prettier/prettier": [
-//      "error",
-//      {
-//        "endOfLine": "auto"
-//      }
-//    ],
-//    "simple-import-sort/exports": "error",
-//    "simple-import-sort/imports": [
-//      "warn",
-//      {
-//        "groups": [
-//          // Node.js builtins. You could also generate this regex if you use a `.js` config.
-//          // For example: `^(${require("module").builtinModules.join("|")})(/|$)`
-//          [
-// eslint-disable-next-line max-len
-//            "^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)"
-//          ],
-//          // Packages
-//          ["^\\w"],
-//          // Internal packages.
-//          ["^(@|config/)(/*|$)"],
-//          // Side effect imports.
-//          ["^\\u0000"],
-//          // Parent imports. Put `..` last.
-//          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-//          // Other relative imports. Put same-folder imports and `.` last.
-//          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-//          // Style imports.
-//          ["^.+\\.s?css$"]
-//        ]
-//      }
-//    ],
-//    "import/no-anonymous-default-export": [
-//      "error",
-//      {
-//        "allowArrowFunction": true,
-//        "allowAnonymousFunction": true
-//      }
-//    ]
-//  }
-// }

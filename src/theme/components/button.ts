@@ -1,5 +1,5 @@
 import { ThemeProviderProps } from '@chakra-ui/react'
-import { whiten, darken, mode } from '@chakra-ui/theme-tools'
+import { darken, mode, whiten } from '@chakra-ui/theme-tools'
 
 export const Button = {
   // style object for base or default style
