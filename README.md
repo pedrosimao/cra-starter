@@ -1,6 +1,6 @@
 # ReactTS 17 Start-up Starter (SPA)
 
-My personal starter project! It was forked from [vite-reactts17-chakra-jest-husky](https://github.com/The24thDS/vite-reactts17-chakra-jest-husky).
+My personal starter project! It was forked from [vite-reactts17-chakra-jest-husky](https://github.com/The24thDS/vite-reactts17-chakra-jest-husky) and improved upon.
 It is intended to quickly bootstrap React SPA apps for any React project.
 
 This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) + [Chakra UI](https://chakra-ui.com) boilerplate to be built with [Vite](https://vitejs.dev).
@@ -14,6 +14,7 @@ This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang
 - [Framer Motion](https://www.framer.com/motion/)
 - [Vitest](https://vitest.dev)
 - [Testing Library](https://testing-library.com)
+- [Cypress](https://www.cypress.io)
 - [Eslint](https://eslint.org)
 - [Prettier](https://prettier.io)
 - [Husky](https://typicode.github.io/husky)

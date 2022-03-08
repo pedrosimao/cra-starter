@@ -109,6 +109,7 @@ module.exports = {
     'react/self-closing-comp': 0,
     'react/jsx-wrap-multilines': 0,
     'react/destructuring-assignment': 0,
+    'react/function-component-definition': 0,
     'react/jsx-filename-extension': 0,
     'require-yield': 0,
     'react/jsx-props-no-spreading': 0,

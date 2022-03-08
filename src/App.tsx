@@ -2,13 +2,13 @@ import { Box, Button, Flex, Image, Link, Text } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
-import ThemeToggleButton from 'src/components/ThemeToggleButton'
+import { ThemeToggleButton } from 'src/components/ThemeToggleButton'
 
 import logo from './logo.svg'
 
 const textFontSizes = [16, 18, 24, 30]
 
-function App(): JSX.Element {
+export const App = (): JSX.Element => {
   const [count, setCount] = useState(0)
 
   return (
@@ -65,5 +65,3 @@ function App(): JSX.Element {
     </Box>
   )
 }
-
-export default App
