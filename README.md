@@ -59,7 +59,7 @@ For the same in Webstorm follow these instructions:
 1. Create the project.
 
    ```bash
-   npx degit PedroSimao/react-startup-starter my-app
+   npx degit PedroSimao/react-spa-startup-starter my-app
    ```
 
 2. Access the project directory.
