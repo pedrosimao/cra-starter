@@ -10,6 +10,7 @@
       "cypress",
       "@testing-library/cypress"
     ],
+    "jsxImportSource": "@emotion/react",
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,

@@ -24,12 +24,13 @@ export default defineConfig({
   plugins: [
     react(
       {
+        jsxImportSource: "@emotion/react",
         babel: {
           plugins: [
             'babel-plugin-macros',
             // 'macros',
             [
-              "@emotion",
+              "@emotion/babel-plugin",
               {
                 "sourceMap": true,
                 "autoLabel": "dev-only",
