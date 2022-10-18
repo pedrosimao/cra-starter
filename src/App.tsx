@@ -8,7 +8,7 @@ import logo from './logo.svg'
 
 const textFontSizes = [16, 18, 24, 30]
 
-export const App = (): JSX.Element => {
+const App = (): JSX.Element => {
   const [count, setCount] = useState(0)
 
   return (
@@ -65,3 +65,5 @@ export const App = (): JSX.Element => {
     </Box>
   )
 }
+
+export default App

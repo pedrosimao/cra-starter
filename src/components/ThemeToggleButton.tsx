@@ -32,3 +32,5 @@ export const ThemeToggleButton = (props: ThemeToggleButtonProps): JSX.Element =>
     />
   )
 }
+
+export default ThemeToggleButton

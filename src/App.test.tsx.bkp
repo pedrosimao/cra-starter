@@ -1,9 +1,17 @@
 import '@testing-library/jest-dom'
 
-import { render } from '@testing-library/react'
+// import { screen } from '@testing-library/react'
+import App from 'src/App'
+import { render } from 'src/utils/test'
 
-import { App } from './App'
+let mockMyMethod: jest.Mock
 
+jest.mock('@chakra-ui/icon', () => ({
+  cx: mockMyMethod,
+  fallbackIcon: {},
+}))
+
+// Todo: make this Vitest version work with Chakra UI
 describe('<App />', () => {
   it('renders without errors', () => {
     render(<App />)

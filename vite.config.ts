@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-// @ts-ignore
 import svgrPlugin from 'vite-plugin-svgr'
 const path = require('path')
 
@@ -16,10 +15,10 @@ export default defineConfig({
       'src' : path.resolve(__dirname, './src')
     },
   },
-  // @ts-ignore
   test: {
     globals: true,
     environment: 'happy-dom',
+    // environment: 'jsdom'
   },
   plugins: [
     react(
